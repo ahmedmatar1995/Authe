@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const req = await fetch("http://localhost:4321/api/auth");
+const res = await req.json();
+if(!res.success) return Astro.redirect("/login")
+---
+
+
+<Layout title="dashboard">
+    <div class="w-full py-20">
+        <div class="w-full flex flex-col items-center">
+            <h2 class="text-4xl font-extrabold text-white capitalize">welcome to board</h2>
+            <h3 class="mt-4 text-3xl font-extrabold capitalize text-white">here we begin</h3>
+            <button id="logout" class="btn mt-4 bg-red-500 rounded text-white capitalize w-fit px-4 py-2 flex items-center justify-center cursor-pointer">logout</button>
+        </div>
+    </div>
+</Layout>
+
+<script>
+import { actions } from "astro:actions"
+
+    logout?.addEventListener("click", async () => {
+        const res = await actions.logout();
+        if(res?.data?.success) return location.assign("/login")
+    });
+</script>

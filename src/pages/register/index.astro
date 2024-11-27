@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import AuthForm from "../../components/AuthForm.astro";
+const req = await fetch("http://localhost:4321/api/auth");
+const res = await req.json();
+if (res.success) return Astro.redirect("/dashboard");
+---
+
+<Layout title="login">
+  <AuthForm />
+</Layout>

@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="w-full h-screen">
+    <div class="w-full h-full flex">
+      <div class="flex-1 flex flex-col items-start py-20 px-8">
+         <h2 class="text-5xl  capitalize font-extrabold text-white"> Astro js is <br /> amazing <br /> framework</h2>
+		 <p id="text" class="mt-4 text-sm text-white capitalize">
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, deserunt laboriosam possimus nostrum nulla unde nemo quisquam obcaecati hic sint consequuntur ducimus numquam provident. Iusto commodi voluptatibus architecto sapiente facere.
+		 </p>
+		 <a href="/register" class="btn mt-4 w-fit px-4 py-2 flex items-center justify-center capitalize">
+			get started 
+		 </a>
+      </div>
+      <div class="flex-1 grid place-items-center">
+        <img
+          src="../../public/banner.png"
+          alt="image"
+          class="w-[500px] rounded aspect-square cursor-pointer shadow-xl object-cover motion-preset-shake"
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script></script>
+
+
+<style>
+#text{
+	text-wrap:balance
+}
+</style>
